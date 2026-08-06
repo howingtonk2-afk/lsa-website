@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Localized Sweetener Alliance (LSA)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --purple: #4A154B;
+      --purple-light: #5c1d5e;
+      --amber: #D9822B;
+      --amber-light: #f3a854;
+      --bg-light: #FAFAFA;
+      --text-dark: #2D3748;
+      --text-muted: #4A5568;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--purple);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Hero */
+    header {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+      color: var(--white);
+      padding: 60px 0 80px;
+      text-align: center;
+      border-bottom: 5px solid var(--amber);
+    }
+
+    .logo-container {
+      margin-bottom: 24px;
+    }
+
+    .logo-placeholder {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      border: 4px solid var(--amber);
+    }
+
+    .logo-placeholder img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .hero-tagline {
+      font-size: 1.25rem;
+      color: var(--amber-light);
+      max-width: 850px;
+      margin: 0 auto 30px;
+      font-weight: 500;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background-color: var(--amber);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(217, 130, 43, 0.4);
+    }
+
+    .btn-cta:hover {
+      background-color: #c07020;
+      transform: translateY(-2px);
+    }
+
+    /* Section Global */
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 45px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--amber);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* FAQ Section */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-card {
+      background: var(--white);
+      border-left: 5px solid var(--purple);
+      padding: 30px;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .faq-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    /* Goals Section */
+    .bg-alt {
+      background-color: #F1EFF4;
+    }
+
+    .goals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .goal-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border-top: 4px solid var(--amber);
+      transition: transform 0.2s ease;
+    }
+
+    .goal-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .goal-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    /* Initiatives Section */
+    .initiatives-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .initiative-category {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .initiative-category h3 {
+      font-size: 1.3rem;
+      border-bottom: 2px solid var(--purple);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .initiative-item {
+      margin-bottom: 18px;
+    }
+
+    .initiative-item strong {
+      color: var(--purple-light);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Board Section */
+    .board-list {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .board-intro {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: var(--text-muted);
+    }
+
+    .board-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    .board-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .board-role {
+      font-weight: 700;
+      color: var(--purple);
+      width: 260px;
+      flex-shrink: 0;
+    }
+
+    .board-desc {
+      color: var(--text-dark);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--purple);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 0;
+      margin-top: 40px;
+      border-top: 4px solid var(--amber);
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2rem; }
+      .hero-tagline { font-size: 1.05rem; }
+      .board-item { flex-direction: column; }
+      .board-role { width: 100%; margin-bottom: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <div class="logo-placeholder">
+          <img src="logo.png" alt="LSA Logo Mark" onerror="this.style.display='none'; this.parentNode.innerHTML='<strong style=\'color:var(--purple);font-family:Montserrat;\'>LSA</strong>'">
+        </div>
+      </div>
+      <h1 class="hero-title">Localized Sweetener Alliance</h1>
+      <p class="hero-tagline">Dedicated to advancing local food sovereignty and ecological stewardship by building businesses and partnerships that scale the alternative sweetener market.</p>
+      <a href="#board" class="btn-cta">Join the Founding Board</a>
+    </div>
+  </header>
+
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h3>What is a localized alternative sweetener?</h3>
+          <p>Localized alternative sweeteners are natural, minimally processed sweetening agents sourced, produced, and typically consumed regionally. This includes honey, sweet sorghum syrup, tree saps (such as maple or bigleaf), and concentrated fruit juices. These are considered sustainable alternatives to heavily refined and supply-chain-intensive cane, beet, and corn sugars.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Why focus on more than just honey and bees?</h3>
+          <p>While honey is a vital regional sweetener, commercial honeybee hives can outcompete and disrupt wild, native pollinators. A resilient ecosystem requires a diverse approach that balances responsible beekeeping with a wide variety of other agricultural sweetening crops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="goals" class="bg-alt">
+    <div class="container">
+      <h2 class="section-title">Core Goals</h2>
+      <div class="goals-grid">
+        <div class="goal-card">
+          <h3>Supply Chain Integration</h3>
+          <p>Facilitate direct partnerships between regional alternative sweetener producers and the local businesses in their vicinity.</p>
+        </div>
+        <div class="goal-card">
+          <h3>Business Incubation</h3>
+          <p>Assist alternative sweetener producers with the resources to found, scale, and grow their operations.</p>
+        </div>
+        <div class="goal-card">
+          <h3>Economic Advocacy</h3>
+          <p>Champion policies that empower small-scale sweetener producers and incentivize the local businesses that support them.</p>
+        </div>
+        <div class="goal-card">
+          <h3>Ecological Advocacy</h3>
+          <p>Advocate for policies and agricultural subsidies that reward beekeepers who actively mitigate their impact on native pollinators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="initiatives">
+    <div class="container">
+      <h2 class="section-title">Key Initiatives</h2>
+      <div class="initiatives-container">
+        
+        <div class="initiative-category">
+          <h3>Policy & Research</h3>
+          <div class="initiative-item">
+            <strong>The Pollinator Offset Policy</strong>
+            <p>Lobbying for subsidies that reward commercial beekeepers who plant designated acreages of native floral forage to offset their hives' impact on wild pollinators.</p>
+          </div>
+          <div class="initiative-item">
+            <strong>Academic Publication</strong>
+            <p>Publishing scientific white papers and agronomic studies to guide policy on sweetener yields, economic impact, and pollinator health.</p>
+          </div>
+        </div>
+
+        <div class="initiative-category">
+          <h3>Industry & Supply Chain</h3>
+          <div class="initiative-item">
+            <strong>The LSA B2B Network</strong>
+            <p>Hosting regional matchmaking hubs to directly connect sweetener producers with local bakeries, beverage makers, and food manufacturers.</p>
+          </div>
+          <div class="initiative-item">
+            <strong>Cross-Industry Collaboration</strong>
+            <p>Creating dedicated spaces to bring diverse sweetener producers together with external experts, including eco-economists, biologists, and supply chain managers.</p>
+          </div>
+          <div class="initiative-item">
+            <strong>The LSA Grant Program</strong>
+            <p>Funding industry excellence by awarding micro-grants for achievements such as "Most Sustainable Producer" and "Highest Native Forage Offset."</p>
+          </div>
+        </div>
+
+        <div class="initiative-category">
+          <h3>Education & Outreach</h3>
+          <div class="initiative-item">
+            <strong>Harvesting & Processing Workshops</strong>
+            <p>Organizing, sponsoring, and promoting hands-on educational seminars dedicated to DIY and small-scale sweetener harvesting, pressing, and preparation.</p>
+          </div>
+          <div class="initiative-item">
+            <strong>Public Showcases</strong>
+            <p>Holding community tasting competitions and bake sales to highlight regional sweetener producers, educate consumers, and drive local demand.</p>
+          </div>
+          <div class="initiative-item">
+            <strong>Habitat Awareness</strong>
+            <p>Launching public campaigns to explain the commercial vs. native bee dynamic and advocating for urban pollination projects.</p>
+          </div>
+          <div class="initiative-item">
+            <strong>Industry Publication</strong>
+            <p>Producing a monthly newsletter designed to evolve into a premier trade publication for alternative sweetener policy and business news.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="board" class="bg-alt">
+    <div class="container">
+      <h2 class="section-title">Founding Board of Directors</h2>
+      <p class="board-intro">To execute this vision, the LSA is actively recruiting a multi-disciplinary founding board:</p>
+      
+      <div class="board-list">
+        <div class="board-item">
+          <div class="board-role">• Founder</div>
+          <div class="board-desc">Kyle Howington</div>
+        </div>
+        <div class="board-item">
+          <div class="board-role">• Non-Profit & Governance Expert</div>
+          <div class="board-desc">Overseeing 501(c)(3) compliance, bylaws, and organizational structure.</div>
+        </div>
+        <div class="board-item">
+          <div class="board-role">• Agricultural Economist</div>
+          <div class="board-desc">Driving research on crop yields, regional market viability, and financial incentives for alternative crops.</div>
+        </div>
+        <div class="board-item">
+          <div class="board-role">• Food & Supply Chain Expert</div>
+          <div class="board-desc">Facilitating B2B matchmaking and ensuring producers meet volume and processing requirements.</div>
+        </div>
+        <div class="board-item">
+          <div class="board-role">• Pollinator Ecologist</div>
+          <div class="board-desc">Ensuring agricultural policies and beekeeper subsidies are grounded in sound environmental science.</div>
+        </div>
+        <div class="board-item">
+          <div class="board-role">• Grant Writer & Development</div>
+          <div class="board-desc">Securing federal, state, and foundational funding to launch programs and build processing infrastructure.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Localized Sweetener Alliance (LSA). All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
