@@ -142,6 +142,33 @@
       background-color: #F1EFF4;
     }
 
+    /* Our Mission Narrative */
+    .mission-narrative {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .mission-narrative p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+    }
+
+    .mission-quote {
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--purple);
+      text-align: center;
+      margin: 30px 0;
+      padding: 0 20px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
     /* Goals Section */
     .goals-grid {
       display: grid;
@@ -204,7 +231,7 @@
 
     /* Board Section */
     .board-list {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0 auto;
       background: var(--white);
       padding: 40px;
@@ -212,18 +239,14 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
 
-    .board-intro {
+    .board-cta-wrapper {
       text-align: center;
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      color: var(--text-muted);
+      margin-bottom: 35px;
     }
 
     .board-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 20px;
-      padding-bottom: 20px;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
       border-bottom: 1px solid #E2E8F0;
     }
 
@@ -233,15 +256,10 @@
       padding-bottom: 0;
     }
 
-    .board-role {
-      font-weight: 700;
-      color: var(--purple);
-      width: 260px;
-      flex-shrink: 0;
-    }
-
     .board-desc {
       color: var(--text-dark);
+      font-size: 1rem;
+      line-height: 1.65;
     }
 
     /* FAQ Section */
@@ -280,12 +298,15 @@
       opacity: 0.8;
     }
 
+    footer a {
+      color: var(--amber-light);
+      text-decoration: none;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .hero-title { font-size: 2rem; }
       .hero-tagline { font-size: 1.05rem; }
-      .board-item { flex-direction: column; }
-      .board-role { width: 100%; margin-bottom: 6px; }
     }
   </style>
 </head>
@@ -299,12 +320,27 @@
         </div>
       </div>
       <h1 class="hero-title">Localized Sweetener Alliance</h1>
-      <p class="hero-tagline">Dedicated to advancing local food sovereignty and ecological stewardship by building businesses and partnerships that scale the alternative sweetener market.</p>
-      <a href="#board" class="btn-cta">Join the Founding Board</a>
+      <p class="hero-tagline">Advancing for local food sovereignty and ecological stewardship by supporting businesses and building partnerships that scale the alternative sweetener market.</p>
+      <a href="mailto:howingtonk2@gmail.com?subject=LSA%20Board%20Inquiry" class="btn-cta">Join the Board</a>
     </div>
   </header>
 
-  <section id="goals">
+  <section id="our-mission">
+    <div class="container">
+      <h2 class="section-title">Our Mission</h2>
+      <div class="mission-narrative">
+        <p>Industrial white sugar carries a massive environmental toll, with bulk processing and long-distance freight accounting for 15–20% of global agricultural emissions. Therefore, it’s wise to consider localized, alternative sweetener options at commercial scales. Whether it’s tree saps in the Pacific Northwest, agave in the Southwest, or sweet sorghum in the Midwest, there are alternatives. These more sustainable choices showcase distinct regional flavor profiles without relying on hyper-processed "bliss points" that drive overconsumption and health problems.</p>
+        
+        <div class="mission-quote">
+          "A thing is right when it tends to preserve the integrity, stability, and beauty of the biotic community" — Aldo Leopold
+        </div>
+
+        <p>A sustainable sweetener system must address the impact of agricultural beekeeping on biodiversity. While commercial honeybees (<em>Apis mellifera</em>) are vital to agriculture, managed hives often outcompete native pollinators for limited forage. We at The Localized Sweetener Alliance (LSA) seek to promote responsible co-existence by connecting commercial beekeepers directly with local businesses and grants to boost their revenue. This financial support would empower apiarists and communities to plant dedicated native habitats for native wildflowers and pollinators.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="goals" class="bg-alt">
     <div class="container">
       <h2 class="section-title">Core Goals</h2>
       <div class="goals-grid">
@@ -328,7 +364,7 @@
     </div>
   </section>
 
-  <section id="initiatives" class="bg-alt">
+  <section id="initiatives">
     <div class="container">
       <h2 class="section-title">Key Initiatives</h2>
       <div class="initiatives-container">
@@ -385,61 +421,13 @@
     </div>
   </section>
 
-  <section id="board">
+  <section id="board" class="bg-alt">
     <div class="container">
       <h2 class="section-title">Founding Board of Directors</h2>
-      <p class="board-intro">To execute this vision, the LSA is actively recruiting a multi-disciplinary founding board:</p>
+      
+      <div class="board-cta-wrapper">
+        <a href="mailto:howingtonk2@gmail.com?subject=LSA%20Board%20Inquiry" class="btn-cta">Join the Board</a>
+      </div>
       
       <div class="board-list">
-        <div class="board-item">
-          <div class="board-role">• Founder</div>
-          <div class="board-desc">Kyle Howington</div>
-        </div>
-        <div class="board-item">
-          <div class="board-role">• Non-Profit & Governance Expert</div>
-          <div class="board-desc">Overseeing 501(c)(3) compliance, bylaws, and organizational structure.</div>
-        </div>
-        <div class="board-item">
-          <div class="board-role">• Agricultural Economist</div>
-          <div class="board-desc">Driving research on crop yields, regional market viability, and financial incentives for alternative crops.</div>
-        </div>
-        <div class="board-item">
-          <div class="board-role">• Commercial Food & Supply Chain Expert</div>
-          <div class="board-desc">Facilitating B2B matchmaking and ensuring producers meet volume and processing requirements.</div>
-        </div>
-        <div class="board-item">
-          <div class="board-role">• Pollinator Ecologist</div>
-          <div class="board-desc">Ensuring agricultural policies and beekeeper subsidies are grounded in sound environmental science.</div>
-        </div>
-        <div class="board-item">
-          <div class="board-role">• Grant Writer & Development Director</div>
-          <div class="board-desc">Securing federal, state, and foundational funding to launch programs and build processing infrastructure.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="bg-alt">
-    <div class="container">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="faq-grid">
-        <div class="faq-card">
-          <h3>What is a localized alternative sweetener?</h3>
-          <p>Localized alternative sweeteners are natural, minimally processed sweetening agents sourced, produced, and typically consumed regionally. This includes honey, sweet sorghum syrup, tree saps (such as maple or bigleaf), and concentrated fruit juices. These are considered sustainable alternatives to heavily refined and supply-chain-intensive cane, beet, and corn sugars.</p>
-        </div>
-        <div class="faq-card">
-          <h3>Why focus on more than just honey and bees?</h3>
-          <p>While honey is a vital regional sweetener, commercial honeybee hives can outcompete and disrupt wild, native pollinators. A resilient ecosystem requires a diverse approach that balances responsible beekeeping with a wide variety of other agricultural sweetening crops.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Localized Sweetener Alliance (LSA). All rights reserved.</p>
-    </div>
-  </footer>
-
-</body>
-</html>
+        <div class="board
