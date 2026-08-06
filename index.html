@@ -58,8 +58,8 @@
     }
 
     .logo-placeholder {
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       margin: 0 auto;
       background: var(--white);
       border-radius: 50%;
@@ -68,12 +68,15 @@
       justify-content: center;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       border: 4px solid var(--amber);
+      overflow: hidden;
+      padding: 8px;
     }
 
     .logo-placeholder img {
-      max-width: 80%;
-      max-height: 80%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      border-radius: 50%;
     }
 
     .hero-title {
@@ -135,33 +138,11 @@
       border-radius: 2px;
     }
 
-    /* FAQ Section */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 25px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .faq-card {
-      background: var(--white);
-      border-left: 5px solid var(--purple);
-      padding: 30px;
-      border-radius: 0 8px 8px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    }
-
-    .faq-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-    }
-
-    /* Goals Section */
     .bg-alt {
       background-color: #F1EFF4;
     }
 
+    /* Goals Section */
     .goals-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -209,6 +190,10 @@
 
     .initiative-item {
       margin-bottom: 18px;
+    }
+
+    .initiative-item:last-child {
+      margin-bottom: 0;
     }
 
     .initiative-item strong {
@@ -259,13 +244,34 @@
       color: var(--text-dark);
     }
 
+    /* FAQ Section */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-card {
+      background: var(--white);
+      border-left: 5px solid var(--purple);
+      padding: 30px;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .faq-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
     /* Footer */
     footer {
       background: var(--purple);
       color: var(--white);
       text-align: center;
       padding: 40px 0;
-      margin-top: 40px;
       border-top: 4px solid var(--amber);
     }
 
@@ -289,7 +295,7 @@
     <div class="container">
       <div class="logo-container">
         <div class="logo-placeholder">
-          <img src="logo.png" alt="LSA Logo Mark" onerror="this.style.display='none'; this.parentNode.innerHTML='<strong style=\'color:var(--purple);font-family:Montserrat;\'>LSA</strong>'">
+          <img src="logo.png" alt="LSA Logo Mark" onerror="this.onerror=null; this.src='logo.jpg'; if(!this.complete) { this.src='logo.jpeg'; }">
         </div>
       </div>
       <h1 class="hero-title">Localized Sweetener Alliance</h1>
@@ -298,23 +304,7 @@
     </div>
   </header>
 
-  <section id="faq">
-    <div class="container">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="faq-grid">
-        <div class="faq-card">
-          <h3>What is a localized alternative sweetener?</h3>
-          <p>Localized alternative sweeteners are natural, minimally processed sweetening agents sourced, produced, and typically consumed regionally. This includes honey, sweet sorghum syrup, tree saps (such as maple or bigleaf), and concentrated fruit juices. These are considered sustainable alternatives to heavily refined and supply-chain-intensive cane, beet, and corn sugars.</p>
-        </div>
-        <div class="faq-card">
-          <h3>Why focus on more than just honey and bees?</h3>
-          <p>While honey is a vital regional sweetener, commercial honeybee hives can outcompete and disrupt wild, native pollinators. A resilient ecosystem requires a diverse approach that balances responsible beekeeping with a wide variety of other agricultural sweetening crops.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="goals" class="bg-alt">
+  <section id="goals">
     <div class="container">
       <h2 class="section-title">Core Goals</h2>
       <div class="goals-grid">
@@ -338,13 +328,17 @@
     </div>
   </section>
 
-  <section id="initiatives">
+  <section id="initiatives" class="bg-alt">
     <div class="container">
       <h2 class="section-title">Key Initiatives</h2>
       <div class="initiatives-container">
         
         <div class="initiative-category">
           <h3>Policy & Research</h3>
+          <div class="initiative-item">
+            <strong>Advocacy & Legislative Reform</strong>
+            <p>We lobby for policies that accelerate the growth, development, and adoption of local sweetener enterprises. This includes advocating for food manufacturer subsidies, state grants for alternative sweetener producers, and tax incentives for businesses that utilize sweeteners from local sources.</p>
+          </div>
           <div class="initiative-item">
             <strong>The Pollinator Offset Policy</strong>
             <p>Lobbying for subsidies that reward commercial beekeepers who plant designated acreages of native floral forage to offset their hives' impact on wild pollinators.</p>
@@ -356,7 +350,7 @@
         </div>
 
         <div class="initiative-category">
-          <h3>Industry & Supply Chain</h3>
+          <h3>Industry & Supply Chain Building</h3>
           <div class="initiative-item">
             <strong>The LSA B2B Network</strong>
             <p>Hosting regional matchmaking hubs to directly connect sweetener producers with local bakeries, beverage makers, and food manufacturers.</p>
@@ -372,7 +366,7 @@
         </div>
 
         <div class="initiative-category">
-          <h3>Education & Outreach</h3>
+          <h3>Community Education & Outreach</h3>
           <div class="initiative-item">
             <strong>Harvesting & Processing Workshops</strong>
             <p>Organizing, sponsoring, and promoting hands-on educational seminars dedicated to DIY and small-scale sweetener harvesting, pressing, and preparation.</p>
@@ -385,17 +379,13 @@
             <strong>Habitat Awareness</strong>
             <p>Launching public campaigns to explain the commercial vs. native bee dynamic and advocating for urban pollination projects.</p>
           </div>
-          <div class="initiative-item">
-            <strong>Industry Publication</strong>
-            <p>Producing a monthly newsletter designed to evolve into a premier trade publication for alternative sweetener policy and business news.</p>
-          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <section id="board" class="bg-alt">
+  <section id="board">
     <div class="container">
       <h2 class="section-title">Founding Board of Directors</h2>
       <p class="board-intro">To execute this vision, the LSA is actively recruiting a multi-disciplinary founding board:</p>
@@ -414,7 +404,7 @@
           <div class="board-desc">Driving research on crop yields, regional market viability, and financial incentives for alternative crops.</div>
         </div>
         <div class="board-item">
-          <div class="board-role">• Food & Supply Chain Expert</div>
+          <div class="board-role">• Commercial Food & Supply Chain Expert</div>
           <div class="board-desc">Facilitating B2B matchmaking and ensuring producers meet volume and processing requirements.</div>
         </div>
         <div class="board-item">
@@ -422,8 +412,24 @@
           <div class="board-desc">Ensuring agricultural policies and beekeeper subsidies are grounded in sound environmental science.</div>
         </div>
         <div class="board-item">
-          <div class="board-role">• Grant Writer & Development</div>
+          <div class="board-role">• Grant Writer & Development Director</div>
           <div class="board-desc">Securing federal, state, and foundational funding to launch programs and build processing infrastructure.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="bg-alt">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h3>What is a localized alternative sweetener?</h3>
+          <p>Localized alternative sweeteners are natural, minimally processed sweetening agents sourced, produced, and typically consumed regionally. This includes honey, sweet sorghum syrup, tree saps (such as maple or bigleaf), and concentrated fruit juices. These are considered sustainable alternatives to heavily refined and supply-chain-intensive cane, beet, and corn sugars.</p>
+        </div>
+        <div class="faq-card">
+          <h3>Why focus on more than just honey and bees?</h3>
+          <p>While honey is a vital regional sweetener, commercial honeybee hives can outcompete and disrupt wild, native pollinators. A resilient ecosystem requires a diverse approach that balances responsible beekeeping with a wide variety of other agricultural sweetening crops.</p>
         </div>
       </div>
     </div>
