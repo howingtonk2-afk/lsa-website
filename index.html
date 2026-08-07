@@ -169,6 +169,83 @@
       line-height: 1.5;
     }
 
+    /* Newsletter Signup Section */
+    #newsletter {
+      padding: 50px 0;
+    }
+
+    .newsletter-card {
+      max-width: 850px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+      color: var(--white);
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(74, 21, 75, 0.25);
+      border: 3px solid var(--amber);
+    }
+
+    .newsletter-card h3 {
+      font-size: 1.75rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .newsletter-card p {
+      color: var(--amber-light);
+      font-size: 1.05rem;
+      margin-bottom: 25px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      max-width: 550px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      min-width: 260px;
+      padding: 14px 20px;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .newsletter-form input[type="email"]:focus {
+      border-color: var(--amber);
+    }
+
+    .btn-subscribe {
+      background-color: var(--amber);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(217, 130, 43, 0.3);
+    }
+
+    .btn-subscribe:hover {
+      background-color: #c07020;
+      transform: translateY(-2px);
+    }
+
     /* Goals Section */
     .goals-grid {
       display: grid;
@@ -307,6 +384,9 @@
     @media (max-width: 768px) {
       .hero-title { font-size: 2rem; }
       .hero-tagline { font-size: 1.05rem; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input[type="email"] { width: 100%; min-width: 100%; }
+      .btn-subscribe { width: 100%; }
     }
   </style>
 </head>
@@ -329,13 +409,26 @@
     <div class="container">
       <h2 class="section-title">Our Mission</h2>
       <div class="mission-narrative">
-        <p>Industrial white sugar takes a massive environmental toll by contributing to a global food system <a href="https://www.thoughtco.com/effect-of-sugar-on-the-environment-1204100">that drives nearly one-third of all global greenhouse gas emissions</a>. Therefore, it’s wise to consider localized sweetener options at commercial scales. Whether it’s tree saps in the Pacific Northwest, agave in the Southwest, or sweet sorghum in the Midwest, there are localized alternatives to refined sugar. These more sustainable choices showcase distinct regional flavor profiles without relying on hyper-processed <a href="https://www.npr.org/sections/thesalt/2015/12/16/459981099/how-the-food-industry-helps-engineer-our-cravings">bliss points</a> which drive overconsumption that leads to health problems.</p>
+        <p>Industrial white sugar takes a massive environmental toll by contributing to a global food system <a href="https://www.thoughtco.com/effect-of-sugar-on-the-environment-1204100" target="_blank">that drives nearly one-third of all global greenhouse gas emissions</a>. Therefore, it’s wise to consider localized sweetener options at commercial scales. Whether it’s tree saps in the Pacific Northwest, agave in the Southwest, or sweet sorghum in the Midwest, there are localized alternatives to refined sugar. These more sustainable choices showcase distinct regional flavor profiles without relying on hyper-processed <a href="https://www.npr.org/sections/thesalt/2015/12/16/459981099/how-the-food-industry-helps-engineer-our-cravings" target="_blank">bliss points</a> which drive overconsumption that leads to health problems.</p>
         
         <div class="mission-quote">
           "A thing is right when it tends to preserve the integrity, stability, and beauty of the biotic community" — Aldo Leopold
         </div>
 
-        <p>A sustainable sweetener market must address the impact of agricultural beekeeping on biodiversity. While commercial honeybees (<em>Apis mellifera</em>) are vital to agriculture, managed hives can <a href="https://beelab.umn.edu/managed-bees-impact-wild-bees">outcompete native pollinators for limited forage</a>. The Localized Sweetener Alliance (LSA) seeks to promote responsible co-existence by connecting commercial beekeepers with local businesses and funding grants to boost revenue that would empower apiarists and communities to plant dedicated habitats for native wildflowers and pollinators.</p>
+        <p>A sustainable sweetener market must address the impact of agricultural beekeeping on biodiversity. While commercial honeybees (<em>Apis mellifera</em>) are vital to agriculture, managed hives can <a href="https://beelab.umn.edu/managed-bees-impact-wild-bees" target="_blank">outcompete native pollinators for limited forage</a>. The Localized Sweetener Alliance (LSA) seeks to promote responsible co-existence by connecting commercial beekeepers with local businesses and funding grants to boost revenue that would empower apiarists and communities to plant dedicated habitats for native wildflowers and pollinators.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <div class="container">
+      <div class="newsletter-card">
+        <h3>Stay Connected with LSA</h3>
+        <p>Subscribe to our newsletter for policy updates, regional sweetener research, and B2B network announcements.</p>
+        <form class="newsletter-form" action="https://formspree.io/f/xaewnppr" method="POST">
+          <input type="email" name="email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn-subscribe">Subscribe</button>
+        </form>
       </div>
     </div>
   </section>
